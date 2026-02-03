@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_03_025221) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_03_031530) do
+  create_table "composers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "labels", force: :cascade do |t|
     t.string "manufacturer"
     t.string "annee"
@@ -19,5 +25,16 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_03_025221) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city"
+  end
+
+  create_table "pieces", force: :cascade do |t|
+    t.string "name"
+    t.string "time_signature"
+    t.string "key_signature"
+    t.string "content"
+    t.integer "composer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "relative"
   end
 end

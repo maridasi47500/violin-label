@@ -1,0 +1,29 @@
+<div id="<%= dom_id piece %>">
+  <p>
+    <strong>Name:</strong>
+    <%= piece.name %>
+  </p>
+
+  <p>
+    <strong>Time signature:</strong>
+    <%= piece.time_signature %>
+  </p>
+
+  <p>
+    <strong>Key signature:</strong>
+    <%= piece.key_signature %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+<iframe style="width:90%;height:300px;" src="/uploads/<%=@piece.name.parameterize%>/hey<%=@piece.name.parameterize%>.html">
+</iframe>
+
+  </p>
+
+  <p>
+    <strong>Composer:</strong>
+    Dans le style de <%= piece.composer.name %>
+  </p>
+
+</div>
