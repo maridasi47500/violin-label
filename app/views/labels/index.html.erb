@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Labels" %>
+
+<%"Fitting the back
+Fitting the front
+Edgework
+Fitting the neck
+Saddle".split("\n").each do |x|%>
+<%1.upto(7).each do |y|%>
+<%if !File.read("./public/uploads/hello#{x.parameterize}#{y}.there").include?("Taille : non indiqué")%>
+<span>
+<%=x%>
+<img style="max-width:100px;max-height:100px;" src="/uploads/<%="#{x.parameterize}#{y}.svg"%>" />
+</span>
+<%end%>
+<%end%>
+<%end%>
+
+<h1>Labels</h1>
+
+<div id="labels">
+  <% @labels.each do |label| %>
+    <%= render label %>
+    <p>
+      <%= link_to "Show this label", label %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New label", new_label_path %>

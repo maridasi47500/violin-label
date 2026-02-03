@@ -1,0 +1,37 @@
+<%= form_with(model: label) do |form| %>
+  <% if label.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(label.errors.count, "error") %> prohibited this label from being saved:</h2>
+
+      <ul>
+        <% label.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :manufacturer, style: "display: block" %>
+    <%= form.text_field :manufacturer %>
+  </div>
+
+  <div>
+    <%= form.label :annee, style: "display: block" %>
+    <%= form.text_field :annee %>
+  </div>
+
+  <div>
+    <%= form.label :model, style: "display: block" %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content, style:"width:100%;height:200px;" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
