@@ -65,6 +65,6 @@ class LabelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def label_params
-      params.expect(label: [ :manufacturer, :annee, :model, :content ])
+      params.expect(label: [ :manufacturer, :annee, :model, :content, :city ])
     end
 end

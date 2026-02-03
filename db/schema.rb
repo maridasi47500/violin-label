@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_03_022450) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_03_025221) do
   create_table "labels", force: :cascade do |t|
     t.string "manufacturer"
     t.string "annee"
@@ -18,5 +18,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_03_022450) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city"
   end
 end
