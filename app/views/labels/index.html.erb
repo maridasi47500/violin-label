@@ -8,11 +8,14 @@ Edgework
 Fitting the neck
 Saddle".split("\n").each do |x|%>
 <%1.upto(7).each do |y|%>
+<%if File.exist?("./public/uploads/hello#{x.parameterize}#{y}.there")%>
 <%if !File.read("./public/uploads/hello#{x.parameterize}#{y}.there").include?("Taille : non indiqué")%>
 <span>
 <%=x%>
 <img style="max-width:100px;max-height:100px;" src="/uploads/<%="#{x.parameterize}#{y}.svg"%>" />
 </span>
+
+<%end%>
 <%end%>
 <%end%>
 <%end%>
